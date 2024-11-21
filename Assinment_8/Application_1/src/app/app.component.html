@@ -1,0 +1,10 @@
+<div style="text-align: center; color: blue;">
+<h2> Assinment about Child to Parent Inter Component Communication</h2>
+
+<h2>{{"Data from child :" +childData}}</h2>
+
+<app-child (dataEvent)="getData($event)"></app-child>
+</div>
+
+
+<router-outlet />
