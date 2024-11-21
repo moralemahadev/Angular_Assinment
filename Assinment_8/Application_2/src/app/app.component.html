@@ -1,0 +1,8 @@
+<div style="text-align: center;">
+  <h2>Assinment about parent to child and child to parent communication</h2>
+  <!--Send data to child component-->
+  <h2>Massage from Child:{{MessageFromParent}}</h2>
+    <app-child [ParentMessage]="MessageToChild" (ChildMessage)="MessageFromParent=$event"></app-child>
+
+  </div>
+<router-outlet />
