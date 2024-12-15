@@ -1,0 +1,120 @@
+<section style="text-align: center;">
+  <div class="container-fluid">
+
+    <div style="line-height: 1.5;">
+      <h2 style="color:red ;">Contact Our </h2>
+      <h2><strong>Customer Support Center</strong> </h2>
+      <img src="laptop-image-withman.ico">
+      <h3>Contact Information</h3>
+      <p style="font-size: 20;">Please fill out your contact information below.</p>
+    </div>
+
+    <h3>Contact Information Forms</h3>
+
+
+    <form [formGroup]="ContactInformationForm">
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">First Name</label>
+          <input [class.is-invalid]="ContactInformationForm.get('firstName')?.invalid" type="text" class="form-control"
+            formControlName="firstName">
+          <small [class.d.none]="ContactInformationForm.get('firstName')?.valid" class="text-danger">First Name is
+            required and contain only alphabets </small>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">Phone</label>
+          <input [class.is-invalid]="ContactInformationForm.get('phone')?.invalid" type=" number" class="form-control"
+            formControlName="phone">
+          <small [class.d.none]="ContactInformationForm.get('phone')?.valid" class="text-danger">phone number is
+            required and must only 10 digits </small>
+
+        </div>
+      </div>
+
+      <div class=" form-group">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            [class.is-invalid]="ContactInformationForm.get('email')?.invalid && ContactInformationForm.get('email')?.touched"
+            type="email" class="form-control" placeholder="name@example.com" formControlName="email">
+          <small
+            [class.d-none]="ContactInformationForm.get('email')?.valid || ContactInformationForm.get('email')?.untouched"
+            class="text-danger">Email is required</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">City</label>
+          <input
+            [class.is-invalid]="ContactInformationForm.get('city')?.invalid && ContactInformationForm.get('city')?.touched"
+            type="text" class="form-control" formControlName="city">
+          <small
+            [class.d-none]="ContactInformationForm.get('city')?.valid || ContactInformationForm.get('city')?.untouched"
+            class="text-danger">City is required must be
+            at
+            least 4
+            characters long</small>
+
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">State</label>
+          <select [class.is-invalid]="ContactInformationForm.get('State')?.invalid" formControlName="State"
+            class="form-select">
+            <option selected>Selecte State..</option>
+            <option>Maharashtra</option>
+            <option>Gujarat</option>
+            <option>Uttar Pradesh</option>
+
+          </select>
+          <small [class.d.none]="ContactInformationForm.get('State')?.valid" class="text-danger">State is
+            required </small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">Zip</label>
+          <input [class.is-invalid]="ContactInformationForm.get('zipCode')?.invalid" formControlName="zipCode"
+            type="text" class="form-control">
+          <small [class.d.none]="ContactInformationForm.get('State')?.valid" class="text-danger">Zipcode is
+            required and must be 5 digits. </small>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="mb-3">
+          <label class="form-label">Comments</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-primary">Submit Form </button>
+
+      <button type="button" class="btn btn-primary ml-3" (click)="SetData()">Set Values</button>
+
+
+
+
+
+    </form>
+    {{ContactInformationForm.value | json}}
+  </div>
+</section>
