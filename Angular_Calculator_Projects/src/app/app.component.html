@@ -1,0 +1,61 @@
+<div class="container" style="text-align: center; background-color: rgb(148, 230, 202);">
+
+  <div class="container my-5">
+    <h2 class="text-center">Number System Conversion</h2>
+    <hr>
+
+    <div class="d-flex justify-content-between">
+      <div style="text-align: left;"><strong>From To</strong></div>
+      <div>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="from" [(ngModel)]="fromSystem" value="binary" class="form-check-input"> Binary
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="from" [(ngModel)]="fromSystem" value="octal" class="form-check-input"> Octal
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="from" [(ngModel)]="fromSystem" value="decimal" class="form-check-input"> Decimal
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="from" [(ngModel)]="fromSystem" value="hex" class="form-check-input"> Hex
+        </label>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between my-3">
+
+      <div>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="to" [(ngModel)]="toSystem" value="binary" class="form-check-input"> Binary
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="to" [(ngModel)]="toSystem" value="octal" class="form-check-input"> Octal
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="to" [(ngModel)]="toSystem" value="decimal" class="form-check-input"> Decimal
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="to" [(ngModel)]="toSystem" value="hex" class="form-check-input"> Hex
+        </label>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <textarea class="form-control" [(ngModel)]="inputValue" rows="4" placeholder="Enter value here..."></textarea>
+    </div>
+
+    <div class="d-flex justify-content-between my-3">
+      <button class="btn btn-primary" (click)="convert()">Convert</button>
+      <div style="text-align: left;">
+        <strong>Result: </strong><span>{{ result }}</span>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center my-3">
+      <button class="btn btn-secondary mx-2" (click)="copyResult()">Copy</button>
+      <button class="btn btn-danger mx-2" (click)="clear()">Clear</button>
+    </div>
+  </div>
+
+</div>
+<router-outlet />
